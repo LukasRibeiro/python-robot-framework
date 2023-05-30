@@ -2,7 +2,7 @@
 Documentation   Esta suite testa o site da amazon.com.br
 Resource        amazon_resources.robot
 Test Setup      Abrir o navegador
-#Test Teardown   Fechar o navegador
+Test Teardown   Fechar o navegador
 
 *** Test Cases ***
 
@@ -14,7 +14,6 @@ Caso de teste 01 - Acesso ao menu "Mais vendidos"
   Entrar no menu mais vendidos
   Verificar se aparece o titulo "Mais vendidos"
   Verificar o titulo da pagina deve ser "Amazon.com.br Mais Vendidos: Dispositivos Amazon e Acessórios - os mais vendidos na Amazon.com.br"
-
 
 #Caso de teste 02 - Pesquisa de produto
 #  [Documentation]   Este teste verifica a busca de um produto

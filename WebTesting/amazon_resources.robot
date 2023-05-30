@@ -10,7 +10,6 @@ ${link_ver_mais}    //a[@aria-label='Mais Vendidos em Dispositivos Amazon e Aces
 ${titulo_mais_vendidos}    zg_banner_text
 ${subtitulo_mais_vendidos}    zg_banner_subtext
 
-
 # implementação das keyswords
 *** Keywords ***
 
@@ -21,6 +20,7 @@ options=add_experimental_option("detach", True)
 
 Fechar o navegador
     Close Browser
+    Capture Page Screenshot
 
 Acessar a homepage do site da amazon
     Go To    url=${url}
