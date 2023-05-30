@@ -4,6 +4,7 @@ Library        SeleniumLibrary
 
 # declara variaveis que tem valores constantes
 *** Variables ***
+${BROWSER}             chrome
 ${url}    https://www.amazon.com.br/
 ${menu_mais_vendidos}    //a[@href='/gp/bestsellers/?ref_=nav_cs_bestsellers'][contains(.,'Mais Vendidos')]
 ${link_ver_mais}    //a[@aria-label='Mais Vendidos em Dispositivos Amazon e Acessórios - Ver mais'][contains(.,'Ver mais')]
@@ -14,7 +15,7 @@ ${subtitulo_mais_vendidos}    zg_banner_subtext
 *** Keywords ***
 
 Abrir o navegador
-    Open Browser    browser=chrome
+    Open Browser    browser=${BROWSER}
     Maximize Browser Window
 options=add_experimental_option("detach", True)
 
