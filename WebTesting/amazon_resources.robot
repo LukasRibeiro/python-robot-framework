@@ -36,3 +36,11 @@ Verificar se aparece o titulo "Mais vendidos"
 
 Verificar o titulo da pagina deve ser "${titulo_da_pagina}"
     Title Should Be    title=${titulo_da_pagina}
+
+Digitar o nome de produto "${produto}" no campo de pesquisa
+    Input Text    locator=twotabsearchtextbox   text=${produto}
+
+Clicar no botão de pesquisa
+    Click Element    locator=nav-search-submit-button
+Verificar o resultado da pesquisa, listando o produto "${produto_pesquisado}"
+    Wait Until Element Is Visible    locator=(//span[contains(.,'${produto_pesquisado}')])[2]
