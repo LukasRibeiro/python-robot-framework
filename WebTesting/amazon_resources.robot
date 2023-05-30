@@ -40,7 +40,7 @@ Verificar se aparece o titulo "Mais vendidos"
 
 Verificar o titulo da pagina deve ser "${titulo_da_pagina}"
     Title Should Be    title=${titulo_da_pagina}
-Xbox Series
+
 Digitar o nome de produto "${produto}" no campo de pesquisa
     Input Text    locator=twotabsearchtextbox   text=${produto}
 
