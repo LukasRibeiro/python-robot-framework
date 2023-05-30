@@ -11,8 +11,10 @@ ${link_ver_mais}    //a[@aria-label='Mais Vendidos em Dispositivos Amazon e Aces
 ${titulo_mais_vendidos}    zg_banner_text
 ${subtitulo_mais_vendidos}    zg_banner_subtext
 ${add_carrinho}    add-to-cart-button
+${carrinho}    nav-cart-count-container
+${link_excluir}    //input[@value='Excluir']
 
-# implementação das keyswords
+# implementação daslink_excluir keyswords
 *** Keywords ***
 
 Abrir o navegador
@@ -57,10 +59,13 @@ Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
     Wait Until Element Is Visible    locator=//span[contains(.,'Adicionado ao carrinho')]    
     Wait Until Element Is Visible    locator=//span[@class='a-size-base'][contains(.,'Xbox Series S')]
 
+Remover o produto "${produto}" do carrinho
+    Click Element    locator=${carrinho}
+    Wait Until Element Is Visible    locator=//span[@class='a-truncate-cut'][contains(.,'${produto}')]
+    Click Element    locator=${link_excluir}
 
-
-
-
+Verificar se o carrinho fica vazio
+    Wait Until Element Is Visible    locator=//h1[@class='a-spacing-mini a-spacing-top-base'][contains(.,'Seu carrinho de compras da Amazon está vazio.')]
 
 
 #========================#
