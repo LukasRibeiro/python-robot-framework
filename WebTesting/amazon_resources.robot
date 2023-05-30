@@ -10,6 +10,7 @@ ${menu_mais_vendidos}    //a[@href='/gp/bestsellers/?ref_=nav_cs_bestsellers'][c
 ${link_ver_mais}    //a[@aria-label='Mais Vendidos em Dispositivos Amazon e Acessórios - Ver mais'][contains(.,'Ver mais')]
 ${titulo_mais_vendidos}    zg_banner_text
 ${subtitulo_mais_vendidos}    zg_banner_subtext
+${add_carrinho}    add-to-cart-button
 
 # implementação das keyswords
 *** Keywords ***
@@ -37,7 +38,7 @@ Verificar se aparece o titulo "Mais vendidos"
 
 Verificar o titulo da pagina deve ser "${titulo_da_pagina}"
     Title Should Be    title=${titulo_da_pagina}
-
+Xbox Series
 Digitar o nome de produto "${produto}" no campo de pesquisa
     Input Text    locator=twotabsearchtextbox   text=${produto}
 
@@ -47,8 +48,24 @@ Clicar no botão de pesquisa
 Verificar o resultado da pesquisa, listando o produto "${produto_pesquisado}"
     Wait Until Element Is Visible    locator=(//span[contains(.,'${produto_pesquisado}')])[2]
 
-#GHERKIN STEPS
+Adicionar o produto "${produto}" no carrinho
+    Click Element    locator=(//span[contains(.,'${produto}')])[2]
+    Wait Until Element Is Visible    locator=//span[@class='a-size-large product-title-word-break'][contains(.,'${produto}')]
+    Click Button    locator=${add_carrinho}
 
+Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
+    Wait Until Element Is Visible    locator=//span[contains(.,'Adicionado ao carrinho')]    
+    Wait Until Element Is Visible    locator=//span[@class='a-size-base'][contains(.,'Xbox Series S')]
+
+
+
+
+
+
+
+#========================#
+#    GHERKIN STEPS       #
+#========================#
 Dado que estou na home page da Amazon.com.br
     Acessar a homepage do site da amazon
 
