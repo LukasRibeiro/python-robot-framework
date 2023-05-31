@@ -92,3 +92,12 @@ Entao um produto da linha "${produto_pesquisado}" deve ser mostrado na página
 
 E o título da página deve ficar "${titulo_da_pagina}"
     Verificar o titulo da pagina deve ser "${titulo_da_pagina}"
+
+Quando adicionar o produto "${produto}" no carrinho
+    Digitar o nome de produto "Xbox Series S" no campo de pesquisa
+    Clicar no botão de pesquisa
+    Verificar o resultado da pesquisa, listando o produto "${produto}"
+    Adicionar o produto "${produto}" no carrinho
+
+Então o produto "Console Xbox Series S" deve ser mostrado no carrinho
+    Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
