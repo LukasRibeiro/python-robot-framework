@@ -101,3 +101,12 @@ Quando adicionar o produto "${produto}" no carrinho
 
 Então o produto "Console Xbox Series S" deve ser mostrado no carrinho
     Verificar se o produto "Console Xbox Series S" foi adicionado com sucesso
+
+E existe o produto "Console Xbox Series S" no carrinho
+    Quando adicionar o produto "Console Xbox Series S" no carrinho
+
+Quando remover o produto "${produto}" do carrinho
+    Remover o produto "${produto}" do carrinho
+
+Então o carrinho deve ficar vazio
+    Verificar se o carrinho fica vazio

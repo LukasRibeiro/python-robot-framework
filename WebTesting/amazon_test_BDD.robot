@@ -33,10 +33,10 @@ Caso de Teste 03 - Adicionar Produto no Carrinho
     Quando adicionar o produto "Console Xbox Series S" no carrinho
     Então o produto "Console Xbox Series S" deve ser mostrado no carrinho
  
-#Caso de Teste 04 - Remover Produto do Carrinho
-#    [Documentation]    Esse teste verifica a remoção de um produto no carrinho de compras
-#    [Tags]             remover_carrinho
-#    Dado que estou na home page da Amazon.com.br
-#    E existe o produto "Console Xbox Series S" no carrinho
-#    Quando remover o produto "Console Xbox Series S" do carrinho
-#    Então o carrinho deve ficar vazio
+Caso de Teste 04 - Remover Produto do Carrinho
+    [Documentation]    Esse teste verifica a remoção de um produto no carrinho de compras
+    [Tags]             remover_carrinho
+    Dado que estou na home page da Amazon.com.br
+    E existe o produto "Console Xbox Series S" no carrinho
+    Quando remover o produto "Console Xbox Series S" do carrinho
+    Então o carrinho deve ficar vazio
